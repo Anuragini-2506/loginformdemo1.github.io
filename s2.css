@@ -1,0 +1,98 @@
+*{
+	font-family: 'Arial Narrow', 'sans-serif';
+	letter-spacing: 1px;
+}
+
+body{
+	
+	width:auto;
+	height: 100vh;
+    background-image: linear-gradient(to right, #2524a7, #1b37b3, #0e47be, #0156c8, #0065d1, #0075dc, #0085e5, #0095ed, #00aaf7, #00befd, #00d2ff, #00e4ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form_reset{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	box-sizing: border-box;
+	border-radius: 5px;
+	box-shadow: 0 0 15px 10px rgba(0,0,0,0.3);
+	height:75%;
+	width:30%;
+	background-color: white;
+}
+
+.form_reset table{
+    width: 100%;
+    height:90%;
+}
+
+
+
+.form_reset table tr td button.button_{
+	    height: 45%;
+		width: 35%;
+		margin-top:4%;
+		border-radius: 50px;
+		background-color: rgb(0, 199, 54);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color:white;
+        padding-left: 0%;
+
+}
+.form_reset table tr td button.button__{
+	   display: flex;
+	   float: right;
+	   background-color: transparent;
+	   margin-top: 0;
+	   padding-top: 0;
+	   height: 0%;
+	   width: 55%;
+	   box-shadow: 0 0 0 0 rgba(0,0,0,0);
+}
+
+.form_reset table tr td input, button{
+	width: 75%;
+	height: 60%;
+	display: block;
+    vertical-align: middle;
+    margin: auto;
+    padding: auto;
+    border:none;
+    outline: none;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    font-size: 1.3vw;
+    padding-left: 5%;
+    border-radius: 5px;
+}
+.form_reset table tr td input:focus{
+	box-shadow: 0 0 15px 10px rgba(0,0,0,0.3);
+
+}
+.form_reset table tr td button.button_:active{
+	box-shadow: 0 0 15px 10px rgba(19, 117, 46,0.3);
+		transform: scale(0.96);
+
+
+}	
+
+.form_reset table tr td span{
+	width: 75%;
+	display: block;
+	vertical-align: middle;
+	margin: auto;
+	padding:auto;
+	height: 50%;
+    font-size: 2vw;
+    color:rgba(0,0,0,0.8);
+    border-radius: 5px;
+    text-align: center;
+}

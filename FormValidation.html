@@ -1,0 +1,117 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>Form Validation</title>
+ 	<link rel="stylesheet" type="text/css" href="s1.css">
+ 	<script type="text/javascript">
+ 		
+ 		function validate(){
+ 			var name = document.getElementById('Name').value;
+ 			var errors = "The following fields are invalid - \n";
+            var flag = 0;
+ 			var letters = /^[A-Za-z]+$/;
+		    if(name.match(letters)){;}
+		    else{ errors = errors.concat("* Name (This field should not contain any chararcter other than alphabets)\n");  flag =1;}
+ 		
+            var lastname = document.getElementById('LName').value;
+            if(lastname.match(letters)) { ; }
+		    else  { errors = errors.concat("* Last Name (This field should not contain any chararcter other than alphabets)\n"); flag =1; }
+
+            var email = document.getElementById('Email').value;
+            if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){;}
+            else{ errors = errors.concat("* Email (This field should be of the form xxx@xxx.xxx)\n"); flag=1;}
+
+            var phone = document.getElementById('phone').value;
+            var phr = /[1-9]{1}[0-9]{9}/;
+            if(phone.match(phr)){;}
+            else{errors = errors.concat("* Phone number (This field should not contain any chararcter other than numbers + length should be 10)\n"); flag=1;}
+
+           
+            var password = document.getElementById("pass").value;
+            if(password.length<8){
+            	errors = errors.concat("* The password length is less than 8\n"); flag = 1;
+            }
+            if(!password.match(/[a-z]/)){
+            	errors = errors.concat("* The password must contain one lowercase letter\n"); flag = 1;
+            }
+            if(!password.match(/[A-Z]/)){
+            	errors = errors.concat("* The password must contain one uppercase letter\n"); flag = 1;
+            }
+            if(!password.match(/[@!&*_]/)){
+            	errors = errors.concat("* The password must contain one special symbol\n"); flag = 1;
+            }
+            if(!password.match(/[0-9]/)){
+            	errors = errors.concat("* The password must contain one digit\n"); flag = 1;
+            }
+
+            var cpassword  = document.getElementById("Confirm_pass").value;
+            if(password != cpassword){errors = errors.concat("* The Password and Confirm password are not matching\n"); flag=1;}
+
+            var question = document.getElementById("security_question").value;
+            if(question==0){ errors = errors.concat("* Please select the security question\n"); flag=1;}
+ 			if(flag == 1 ) {window.alert(errors);}	
+ 			else{window.alert("Successful");}
+ 		}
+ 	</script>
+ </head>
+ <body>
+ 	<div class="display">
+	 	<div class="white_bg"> 		
+	 	</div>
+	 	<form class="page" id="form1" onsubmit="validate()">
+	 		<div class="heading" ><span>Apply as Employee</span></div>
+	 		<div class="form_emp">
+	 				<table class="information">
+	 					<tr>
+	 						<td><input type="text" class="info" placeholder="First Name*" id="Name" required></td>
+	 					    <td><input type="text" class="info" placeholder="Your Email*" id="Email" required></td>
+	 					</tr>
+	 					<tr>
+	 						<td><input type="text" class="info" placeholder="Last Name*" id="LName" required></td>
+	 					    <td><input type="text" class="info" placeholder="Your Phone*" id="phone" required></td>
+	 					</tr>
+	 					<tr>
+	 						<td><input type="Password" class="info" placeholder="Password*" id="pass" required></td>
+	 					    <td>
+	 					    	<select type="text" class="info" value="0" id="security_question" required>
+	 					    	   <option value="0">Please Select your security question</option>
+	 					    	   <option value="1">Your favourite place in the world</option>
+	 					    	   <option value="2">Your favorite hobby</option>
+	 					        </select>
+	 					    </td>
+	 					</tr>
+	 					<tr>
+	 						<td><input type="Password" class="info" placeholder="Confirm Password*" id="Confirm_pass" required></td>
+	 					    <td><input type="text" class="info" placeholder="Enter your Answer*" id="security_ans" required></td>
+	 					</tr>
+	 					<tr class="genn" style="color:rgba(0,0,0,0.7);font-size: 1.3vw;">
+	 						
+	 						<td style="padding-left:5%;"><input type="radio" class="gen" checked name="gender"><label>Male</label>
+	 					        <input type="radio" class="gen" name="gender" ><label>Female</label></td>
+	 				    
+	 					</tr>
+	 				</table>
+	 				<div class="Register"><button type="submit" form="form1">Register</button></div>
+	 		</div>
+	 		<div></div>
+	 	</form>	
+
+    </div>
+    <div class="black">
+	    <div class="back">
+		    <div class="thought">
+		    	<img src="rocket.png" >
+		    	<p style="font-size: 2.8vw;">Welcome</p>
+		    	<p>You are 30 seconds away<br>from earning your own <br> money!</p>   
+		    </div>
+		    
+		    <div class="Login">
+		    	<a href="LoginPage.html" style="text-decoration: none;"><button><span>Login</span></button></a>
+		    </div>
+		</div>    
+    </div>
+
+
+ 
+ </body>
+ </html>
